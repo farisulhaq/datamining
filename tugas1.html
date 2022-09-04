@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Tugas 1 &#8212; Datamining</title>
+    <title>Tugas 1 &#8212; DATAMINING</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -93,10 +93,10 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="_static/faris.png" class="logo" alt="logo">
       
       
-      <h1 class="site-logo" id="site-title">Datamining</h1>
+      <h1 class="site-logo" id="site-title">DATAMINING</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -194,7 +194,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://colab.research.google.com/github/farisulhaq/datamining/blob/gh-pages/_sources/notebooks.ipynb"
+        <a href="https://colab.research.google.com/github/farisulhaq/datamining/blob/gh-pages/_sources/tugas1.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -254,7 +254,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/farisulhaq/datamining/issues/new?title=Issue%20on%20page%20%2Fnotebooks.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/farisulhaq/datamining/issues/new?title=Issue%20on%20page%20%2Ftugas1.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -282,7 +282,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/notebooks.ipynb"
+        <a href="_sources/tugas1.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -342,28 +342,60 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#read-data-with-url-in-pandas">
-   read data with url in pandas
+  <a class="reference internal nav-link" href="#membaca-data-dari-url-pandas">
+   Membaca data dari url pandas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#median">
-   median
+  <a class="reference internal nav-link" href="#statistik-matematika">
+   Statistik Matematika
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modus">
-   modus
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rata-rata">
-   rata-rata
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kuartil-1">
+     Kuartil 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kuartil-2">
+     Kuartil 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kuartil-3">
+     Kuartil 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#median">
+     Median
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modus">
+     Modus
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rata-rata">
+     Rata-rata
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#desil-1-10">
+     Desil 1 - 10
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jangkauan">
+     Jangkauan
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kemiringan-skewned">
-   kemiringan/skewned
+   Kemiringan/Skewned
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -393,28 +425,60 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#read-data-with-url-in-pandas">
-   read data with url in pandas
+  <a class="reference internal nav-link" href="#membaca-data-dari-url-pandas">
+   Membaca data dari url pandas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#median">
-   median
+  <a class="reference internal nav-link" href="#statistik-matematika">
+   Statistik Matematika
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#modus">
-   modus
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rata-rata">
-   rata-rata
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kuartil-1">
+     Kuartil 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kuartil-2">
+     Kuartil 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kuartil-3">
+     Kuartil 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#median">
+     Median
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#modus">
+     Modus
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rata-rata">
+     Rata-rata
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#desil-1-10">
+     Desil 1 - 10
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jangkauan">
+     Jangkauan
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#kemiringan-skewned">
-   kemiringan/skewned
+   Kemiringan/Skewned
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -436,8 +500,8 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tugas-1">
 <h1>Tugas 1<a class="headerlink" href="#tugas-1" title="Permalink to this headline">#</a></h1>
-<section id="read-data-with-url-in-pandas">
-<h2>read data with url in pandas<a class="headerlink" href="#read-data-with-url-in-pandas" title="Permalink to this headline">#</a></h2>
+<section id="membaca-data-dari-url-pandas">
+<h2>Membaca data dari url pandas<a class="headerlink" href="#membaca-data-dari-url-pandas" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -471,8 +535,8 @@ memory usage: 42.9+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;total&#39;</span><span class="p">]</span>
-<span class="n">data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;total&#39;</span><span class="p">]</span>
+<span class="n">df</span>
 </pre></div>
 </div>
 </div>
@@ -495,7 +559,7 @@ Name: total, Length: 1368, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -513,10 +577,15 @@ Name: total, dtype: float64
 </div>
 </div>
 </div>
+</section>
+<section id="statistik-matematika">
+<h2>Statistik Matematika<a class="headerlink" href="#statistik-matematika" title="Permalink to this headline">#</a></h2>
+<section id="kuartil-1">
+<h3>Kuartil 1<a class="headerlink" href="#kuartil-1" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -526,9 +595,12 @@ Name: total, dtype: float64
 </div>
 </div>
 </div>
+</section>
+<section id="kuartil-2">
+<h3>Kuartil 2<a class="headerlink" href="#kuartil-2" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -538,9 +610,12 @@ Name: total, dtype: float64
 </div>
 </div>
 </div>
+</section>
+<section id="kuartil-3">
+<h3>Kuartil 3<a class="headerlink" href="#kuartil-3" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -559,10 +634,10 @@ Name: total, dtype: float64
 </div>
 </section>
 <section id="median">
-<h2>median<a class="headerlink" href="#median" title="Permalink to this headline">#</a></h2>
+<h3>Median<a class="headerlink" href="#median" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -574,10 +649,10 @@ Name: total, dtype: float64
 </div>
 </section>
 <section id="modus">
-<h2>modus<a class="headerlink" href="#modus" title="Permalink to this headline">#</a></h2>
+<h3>Modus<a class="headerlink" href="#modus" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -589,10 +664,10 @@ Name: total, dtype: float64
 </div>
 </section>
 <section id="rata-rata">
-<h2>rata-rata<a class="headerlink" href="#rata-rata" title="Permalink to this headline">#</a></h2>
+<h3>Rata-rata<a class="headerlink" href="#rata-rata" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -603,11 +678,46 @@ Name: total, dtype: float64
 </div>
 </div>
 </section>
-<section id="kemiringan-skewned">
-<h2>kemiringan/skewned<a class="headerlink" href="#kemiringan-skewned" title="Permalink to this headline">#</a></h2>
+<section id="desil-1-10">
+<h3>Desil 1 - 10<a class="headerlink" href="#desil-1-10" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0., 0., 0., 0., 0., 0., 0., 1., 2., 8.])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="jangkauan">
+<h3>Jangkauan<a class="headerlink" href="#jangkauan" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rumus jamgkauan J = Xn - X1</span>
+<span class="n">Xn</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">X1</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">J</span> <span class="o">=</span> <span class="n">Xn</span> <span class="o">-</span> <span class="n">X1</span>
+<span class="n">J</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>710
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="kemiringan-skewned">
+<h2>Kemiringan/Skewned<a class="headerlink" href="#kemiringan-skewned" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -628,7 +738,7 @@ Name: total, dtype: float64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -638,12 +748,12 @@ Name: total, dtype: float64
   warnings.warn(msg, FutureWarning)
 </pre></div>
 </div>
-<img alt="_images/notebooks_19_1.png" src="_images/notebooks_19_1.png" />
+<img alt="_images/tugas1_27_1.png" src="_images/tugas1_27_1.png" />
 </div>
 </div>
 <section id="jawaban">
 <h3>Jawaban<a class="headerlink" href="#jawaban" title="Permalink to this headline">#</a></h3>
-<p>dilihat dari gambar dan data hasil statistiknya menunjukkan bahwa data tersebut termasuk positively skewed</p>
+<p>Dilihat dari gambar dan data hasil statistiknya menunjukkan bahwa data tersebut termasuk positively skewed</p>
 </section>
 </section>
 </section>
