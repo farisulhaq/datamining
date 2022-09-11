@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Tugas 1 &#8212; DATAMINING</title>
+    <title>Statistika Deskriptif &#8212; DATAMINING</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,9 +50,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Membuat skewed data" href="skewed.html" />
+    <link rel="next" title="Deskritisasi" href="tugas2.html" />
+    <link rel="prev" title="Data Mining" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -108,23 +111,11 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    DATAMINING
+                    Data Mining
                 </a>
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Pendahuluan
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="skewed.html">
-   Membuat skewed data
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Tugas
  </span>
@@ -132,7 +123,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Tugas 1
+   Statistika Deskriptif
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tugas2.html">
+   Deskritisasi
   </a>
  </li>
 </ul>
@@ -342,66 +338,163 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#membaca-data-dari-url-pandas">
-   Membaca data dari url pandas
+  <a class="reference internal nav-link" href="#apa-itu-statistika-deskriptif">
+   Apa Itu Statistika Deskriptif?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#statistik-matematika">
-   Statistik Matematika
+  <a class="reference internal nav-link" href="#apa-kegunaan-statistika-deskriptif">
+   Apa Kegunaan Statistika Deskriptif?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metode-statistika-deskriptif">
+   Metode Statistika Deskriptif
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#kuartil-1">
-     Kuartil 1
+    <a class="reference internal nav-link" href="#mean-median-dan-modus">
+     Mean, Median, dan Modus
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#kuartil-2">
-     Kuartil 2
+    <a class="reference internal nav-link" href="#kuartil-desil-dan-persentil">
+     Kuartil, Desil, dan Persentil
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#kuartil-3">
-     Kuartil 3
+    <a class="reference internal nav-link" href="#jangkauan-simpangan-ragam-dan-varians">
+     Jangkauan, Simpangan, Ragam, dan Varians
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#median">
-     Median
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modus">
-     Modus
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rata-rata">
-     Rata-rata
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#desil-1-10">
-     Desil 1 - 10
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jangkauan">
-     Jangkauan
+    <a class="reference internal nav-link" href="#simpangan-baku-standar-deviasi">
+     Simpangan baku (Standar deviasi)
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kemiringan-skewned">
-   Kemiringan/Skewned
+  <a class="reference internal nav-link" href="#rumus">
+   <strong>
+    Rumus
+   </strong>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jawaban">
-     Jawaban
+    <a class="reference internal nav-link" href="#mean">
+     <strong>
+      Mean
+     </strong>
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#median">
+     <strong>
+      Median
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modus">
+   <strong>
+    Modus
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#desil">
+   <strong>
+    Desil
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kuartil">
+   <strong>
+    Kuartil
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jangkauan">
+   <strong>
+    Jangkauan
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simpangan-baku">
+   <strong>
+    Simpangan Baku
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementasi">
+   Implementasi
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataset">
+     Dataset
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contoh-code">
+     Contoh Code
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Mean
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Median
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Modus
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Kuartil
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       Desil
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Jangkauan
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       Simpangan Baku
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kemiringan-skewness">
+     Kemiringan/Skewness
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jawaban">
+       Jawaban
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -414,7 +507,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tugas 1</h1>
+                <h1>Statistika Deskriptif</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -425,66 +518,163 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#membaca-data-dari-url-pandas">
-   Membaca data dari url pandas
+  <a class="reference internal nav-link" href="#apa-itu-statistika-deskriptif">
+   Apa Itu Statistika Deskriptif?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#statistik-matematika">
-   Statistik Matematika
+  <a class="reference internal nav-link" href="#apa-kegunaan-statistika-deskriptif">
+   Apa Kegunaan Statistika Deskriptif?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#metode-statistika-deskriptif">
+   Metode Statistika Deskriptif
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#kuartil-1">
-     Kuartil 1
+    <a class="reference internal nav-link" href="#mean-median-dan-modus">
+     Mean, Median, dan Modus
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#kuartil-2">
-     Kuartil 2
+    <a class="reference internal nav-link" href="#kuartil-desil-dan-persentil">
+     Kuartil, Desil, dan Persentil
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#kuartil-3">
-     Kuartil 3
+    <a class="reference internal nav-link" href="#jangkauan-simpangan-ragam-dan-varians">
+     Jangkauan, Simpangan, Ragam, dan Varians
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#median">
-     Median
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modus">
-     Modus
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rata-rata">
-     Rata-rata
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#desil-1-10">
-     Desil 1 - 10
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jangkauan">
-     Jangkauan
+    <a class="reference internal nav-link" href="#simpangan-baku-standar-deviasi">
+     Simpangan baku (Standar deviasi)
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#kemiringan-skewned">
-   Kemiringan/Skewned
+  <a class="reference internal nav-link" href="#rumus">
+   <strong>
+    Rumus
+   </strong>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jawaban">
-     Jawaban
+    <a class="reference internal nav-link" href="#mean">
+     <strong>
+      Mean
+     </strong>
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#median">
+     <strong>
+      Median
+     </strong>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modus">
+   <strong>
+    Modus
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#desil">
+   <strong>
+    Desil
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#kuartil">
+   <strong>
+    Kuartil
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jangkauan">
+   <strong>
+    Jangkauan
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simpangan-baku">
+   <strong>
+    Simpangan Baku
+   </strong>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementasi">
+   Implementasi
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataset">
+     Dataset
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#contoh-code">
+     Contoh Code
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id1">
+       Mean
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Median
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Modus
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Kuartil
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id5">
+       Desil
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id6">
+       Jangkauan
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id7">
+       Simpangan Baku
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kemiringan-skewness">
+     Kemiringan/Skewness
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jawaban">
+       Jawaban
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -498,13 +688,244 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="tugas-1">
-<h1>Tugas 1<a class="headerlink" href="#tugas-1" title="Permalink to this headline">#</a></h1>
-<section id="membaca-data-dari-url-pandas">
-<h2>Membaca data dari url pandas<a class="headerlink" href="#membaca-data-dari-url-pandas" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="statistika-deskriptif">
+<h1>Statistika Deskriptif<a class="headerlink" href="#statistika-deskriptif" title="Permalink to this headline">#</a></h1>
+<section id="apa-itu-statistika-deskriptif">
+<h2>Apa Itu Statistika Deskriptif?<a class="headerlink" href="#apa-itu-statistika-deskriptif" title="Permalink to this headline">#</a></h2>
+<p align="justify">
+Sebelum membahas pengertian Statistika Deskriptif lebih baik kita mencari tau terlebih dahulu apasih perbedaan statistik dengan statistika. 
+<br>
+Statistika mengacu pada salah satu cabang ilmu yang mempelajari tentang bagaimana mengumpulkan, mengolah, menganalisis, menyajikan, interpretasi data dan mengambil kesimpulan.
+<br>
+Sedangkan statistik adalah catatan angka dan hasil pengolahan data. Hasil pengolahan data bisa berupa rata-rata (mean), nilai tengah (median), modus dan masih banyak lagi. 
+</p>
+</section>
+<section id="apa-kegunaan-statistika-deskriptif">
+<h2>Apa Kegunaan Statistika Deskriptif?<a class="headerlink" href="#apa-kegunaan-statistika-deskriptif" title="Permalink to this headline">#</a></h2>
+<p align="justify">
+Salah satu kegunaan yang paling populer adalah untuk menganalisis dan mengolah data yang dikumpulkan dari sebuah penelitian.
+<br>
+Nah, statistika deskriptif ini berguna untuk memberikan informasi dan hubungan variabel dari data yang telah kamu kumpulkan dengan susah payah.
+<br>
+Selain itu, contoh statistika deskriptif  tetap bisa terpakai bahkan ketika kamu masuk ke dunia kerja sekalipun. Misalnya, kamu ingin memulai sebuah startup. Tentu kamu harus membuat perkiraan finansial usaha tersebut dari tahun ke tahun, termasuk pengeluaran dan pemasukannya. 
+</p>
+</section>
+<section id="metode-statistika-deskriptif">
+<h2>Metode Statistika Deskriptif<a class="headerlink" href="#metode-statistika-deskriptif" title="Permalink to this headline">#</a></h2>
+<p align="justify">
+Dengan menggunakan statistika deskriptif, kita bisa mendapatkan berbagai informasi dari data dan variabel sebagai berikut ini.
+</p>
+<ul>
+<li><p align="justify">Pemusatan data pada data tunggal dan data berkelompok (mean, median, dan modus)</p>
+</li>
+<li><p align="justify">Ukuran letak data tunggal dan data berkelompok (kuartil dan desil)</p>
+</li>
+<li><p align="justify">Ukuran penyebaran data pada data tunggal (jangkauan, jangkauan antar kuartil, simpangan, simpangan rata-rata)</p>
+</li>
+<li><p align="justify">Ukuran penyebaran data pada data berkelompok (jangkauan, jangkauan antar kuartil, simpangan kuartil, simpangan baku, dan ragam)</p>
+</li>
+</ul>
+<section id="mean-median-dan-modus">
+<h3>Mean, Median, dan Modus<a class="headerlink" href="#mean-median-dan-modus" title="Permalink to this headline">#</a></h3>
+<p align="justify">
+Kalau kamu dari tadi bertanya-tanya tentang rumus statistika deskriptif, kamu perlu mengerti dulu nih tentang mean, median, dan modus.
+</p>
+<ul>
+<li><p align="justify">Mean atau rata-rata adalah perbandingan jumlah seluruh data dan banyaknya data.</p>
+</li>
+<li><p align="justify">Median adalah nilai tengah dari data yang ada. Gue pribadi punya cara sendiri untuk ngapalin apa itu median. Dari tulisannya kan awalnya ada ‘med’, seperti medium. Nah, medium itu biasanya tengah-tengah, di bawah large tapi di atas small. Jadi, gue selalu inget banget median itu artinya nilai tengah.</p>
+</li>
+<li><p align="justify">Modus adalah nilai yang frekuensi kemunculannya paling banyak. Dengan kata lain, modus merupakan nilai yang paling sering muncul dibandingkan dengan nilai-nilai lainnya.</p>
+</li>
+</ul>
+</section>
+<section id="kuartil-desil-dan-persentil">
+<h3>Kuartil, Desil, dan Persentil<a class="headerlink" href="#kuartil-desil-dan-persentil" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p align="justify">kuartil adalah nilai yang membagi data menjadi 4 bagian secara sama rata.</p>
+</li>
+<li><p align="justify">Desil adalah nilai yang membagi data menjadi 10 bagian secara sama rata.</p>
+</li>
+<li><p align="justify">Persentil adalah nilai yang membagi data menjadi 100 bagian secara sama rata.</p>
+</li>
+</ul>
+</section>
+<section id="jangkauan-simpangan-ragam-dan-varians">
+<h3>Jangkauan, Simpangan, Ragam, dan Varians<a class="headerlink" href="#jangkauan-simpangan-ragam-dan-varians" title="Permalink to this headline">#</a></h3>
+<ul>
+<li><p align="justify">Jangkauan adalah nilai dari selisih nilai maksimum dan nilai minimum.</p>
+</li>
+<li><p align="justify">Simpangan adalah Suatu nilai yang digunakan untuk mengukur seberapa jauh data yang lain menyimpang dari rata-rata.</p>
+</li>
+<li><p align="justify">Ragam adalah nilai perbandingan antara simpangan baku (atau standar deviasi) dengan nilai rata-ratanya, dalam bentuk persen.</p>
+</li>
+<li><p align="justify">Varians adalah nilai statistik yang sering kali dipakai dalam menentukan kedekatan sebaran data yang ada di dalam sampel dan seberapa dekat titik data individu dengan mean atau rata-rata nilai dari sampel itu sendiri.</p>
+</li>
+</ul>
+</section>
+<section id="simpangan-baku-standar-deviasi">
+<h3>Simpangan baku (Standar deviasi)<a class="headerlink" href="#simpangan-baku-standar-deviasi" title="Permalink to this headline">#</a></h3>
+<p align="justify">
+Standar deviasi atau biasa disebut simpangan baku merupakan nilai statistik yang menjelaskan tingkat homogenitas (atau keseragamanan) dari suatu data kelompok.
+<br>
+Nilai simpangan baku bisa berupa angka 0 atau selainnya:
+</p>
+<ul>
+<li><p align="justify">Jika simpangan baku bernilai 0, itu menandakan setiap elemen dari suatu data kelompok bersifat indentik satu sama lain.</p>
+</li>
+<li><p align="justify">Dan jika tidak sama dengan 0 (bisa negatif atau positif), itu menunjukkan bahwa titik data individu lebih kecil atau lebih besar dari rata-rata.</p></li>
+</ul>
+</section>
+</section>
+<section id="rumus">
+<h2><strong>Rumus</strong><a class="headerlink" href="#rumus" title="Permalink to this headline">#</a></h2>
+<section id="mean">
+<h3><strong>Mean</strong><a class="headerlink" href="#mean" title="Permalink to this headline">#</a></h3>
+<p><strong>Data Tunggal</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\displaystyle\bar x &amp;= \frac{x_{1} + x_{2} + x_{3} + ... + x_{n}}{n} \\
+keterangan &amp;: \\
+\bar x &amp;=\ Rata-rata \\
+x_{1} + x_{2} + x_{3} + ... + x_{n} &amp;=\ Nilai \  data \\
+n &amp;=\ Banyaknya \ data
+\end{align*}
+\end{split}\]</div>
+<p><strong>Data kelompok</strong></p>
+<p align="justify">
+Mean untuk data kelompok Jika data yang tersedia merupakan data kelompok, artinya data itu dikelompokkan ke dalam interval-interval kelas yang sama panjang. Untuk mengetahui nilai mediannya dapat ditentukan dengan rumus berikut ini.
+</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\displaystyle
+\bar x &amp;= \frac{\sum f_{i}x_{i}}{n} \\
+keterangan &amp;: \\
+\bar x &amp;=\ Rata-rata \\
+f_{i} &amp;=\ Frekuensi \\
+x_{i} &amp;=\ Nilai \ tengah \\
+n &amp;=\ Total \ frekuensi \ atau \ data
+\end{align*}
+\end{split}\]</div>
+</section>
+<section id="median">
+<h3><strong>Median</strong><a class="headerlink" href="#median" title="Permalink to this headline">#</a></h3>
+<p><strong>Data Tunggal :</strong></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\displaystyle
+Jumlah \ data \ ganjil &amp;: \\
+M_{e} &amp;= \frac{X_{(n -1)}}{2} \\
+Jumlah \ data \ genap &amp;: \\
+M_{e} &amp;= \frac{X_{(\frac{n}{2})}+X_{(\frac{n}{2}+1)}}{2}
+\end{align*}
+\end{split}\]</div>
+<p><strong>Data Kelompok</strong></p>
+<p align="justify">
+Median untuk data kelompok Jika data yang tersedia merupakan data kelompok, artinya data itu dikelompokkan ke dalam interval-interval kelas yang sama panjang. Untuk mengetahui nilai mediannya dapat ditentukan dengan rumus berikut ini.
+</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+\displaystyle
+M_{e} &amp;= L + c\left( \frac{\frac{1}{2}n - f_{k}}{\sum f_{i}} \right)
+\end{align*}
+\]</div>
+</section>
+</section>
+<section id="modus">
+<h2><strong>Modus</strong><a class="headerlink" href="#modus" title="Permalink to this headline">#</a></h2>
+<p align="justify">
+Modus ialah nilai yang paling sering muncul atau nilai yang mempunyai frekuensi tertinggi. Jika suatu data hanya mempunyai satu modus disebut unimodal dan bila memiliki dua modus disebut bimodal, sedangkan jika memiliki modus lebih dari dua disebut multimodal. Modus dilambangkan dengan Mo.
+</p>
+<p><strong>Data tunggal</strong></p>
+<p align="justify">
+Modus dari data tunggal adalah data yang sering muncul atau data dengan frekuensi tertinggi. Perhatikan contoh soal berikut ini. Contoh: Tentukan modus dari data di bawah ini. 2, 1, 4, 1, 1, 5, 7, 8, 9, 5, 5, 10 Jawab: Data yang sering muncul adalah 1 dan 5. Jadi modusnya adalah 1 dan 5.
+</p>
+<p><strong>Data Kelompok</strong></p>
+<p align="justify">
+Modus data kelompok Modus data kelompok dirumuskan sebagai berikut:
+</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\displaystyle
+M_{o} &amp;= L + c\left( \frac{d_{1}}{d_{1} + d_{2}} \right)c \\
+\end{align*}
+\end{split}\]</div>
+</section>
+<section id="desil">
+<h2><strong>Desil</strong><a class="headerlink" href="#desil" title="Permalink to this headline">#</a></h2>
+<p align="justify">
+Desil adalah membagi data yang telah diurutkan menjadi sepuluh bagian yang sama banyak. Desil data tunggal Urutkan data dari yang kecil ke yang besar, kemudian tentukan Desil dengan rumus sebagai berikut: 
+</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+\displaystyle
+D_{i} &amp;= data \ ke -\frac{i\left( n + 1 \right)}{10}
+\end{align*}
+\]</div>
+</section>
+<section id="kuartil">
+<h2><strong>Kuartil</strong><a class="headerlink" href="#kuartil" title="Permalink to this headline">#</a></h2>
+<p align="justify">
+kuartil adalah membagi data yang telah diurutkan menjadi empat bagian yang sama banyak. Kuartil data tunggal Urutkan data dari yang kecil ke yang besar, kemudian tentukan kuartil dengan rumus sebagai berikut: 
+</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+\displaystyle
+Q_{i} &amp;= \frac{i\left( n + 1 \right)}{4}
+\end{align*}
+\]</div>
+</section>
+<section id="jangkauan">
+<h2><strong>Jangkauan</strong><a class="headerlink" href="#jangkauan" title="Permalink to this headline">#</a></h2>
+<p align="justify">
+Apabila sekumpulan data sudah diurutkan dari yang terkecil sampai terbesar maka Range dari data itu adalah
+<br>
+<p><strong>Range = data terbesar – data terkecil</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+\displaystyle
+J &amp;= X_{max} - X_{min}
+\end{align*}
+\]</div>
+<p>Contohnya tentukan range dari data 15, 20, 25 , 35, 40, 43, 50!</p>
+<p>Cara menjawabnya:
+Data terbesarnya = 50
+data terkecilnya = 15</p>
+<p><strong>Range = 50 – 15 = 35</strong></p>
+</p>
+</section>
+<section id="simpangan-baku">
+<h2><strong>Simpangan Baku</strong><a class="headerlink" href="#simpangan-baku" title="Permalink to this headline">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\displaystyle
+Data \ Populasi &amp;: \\
+s &amp;= \sqrt{\frac{\sum_{i=1}^{n}\left( x_{i} - \bar x \right)^{2}}{n}} \\
+Data \ Sampel &amp;: \\
+s &amp;= \sqrt{\frac{\sum_{i=1}^{n}\left( x_{i} - \bar x \right)^{2}}{n-1}}
+\end{align*}
+\end{split}\]</div>
+</section>
+<section id="implementasi">
+<h2>Implementasi<a class="headerlink" href="#implementasi" title="Permalink to this headline">#</a></h2>
+<section id="dataset">
+<h3>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">#</a></h3>
+<p>Membaca dataset dari url menggunakan pandas</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="c1"># import pandas</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://raw.githubusercontent.com/RamiKrispin/coronavirus-csv/master/south_korea/covid_south_korea_long.csv&quot;</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 </pre></div>
@@ -513,7 +934,8 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengecek type data pada dataset</span>
+<span class="n">c</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -535,7 +957,8 @@ memory usage: 42.9+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;total&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># memilih data yang berupa numeric</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;total&#39;</span><span class="p">]</span>
 <span class="n">df</span>
 </pre></div>
 </div>
@@ -559,7 +982,8 @@ Name: total, Length: 1368, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mengecek deskripsi dataset </span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -578,146 +1002,161 @@ Name: total, dtype: float64
 </div>
 </div>
 </section>
-<section id="statistik-matematika">
-<h2>Statistik Matematika<a class="headerlink" href="#statistik-matematika" title="Permalink to this headline">#</a></h2>
-<section id="kuartil-1">
-<h3>Kuartil 1<a class="headerlink" href="#kuartil-1" title="Permalink to this headline">#</a></h3>
+<section id="contoh-code">
+<h3>Contoh Code<a class="headerlink" href="#contoh-code" title="Permalink to this headline">#</a></h3>
+<p><strong>Statistika Deskriptif</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">statistics</span> <span class="k">as</span> <span class="nn">st</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id1">
+<h4>Mean<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Rata-rata = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Rata-rata = 6.132309941520468
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="kuartil-2">
-<h3>Kuartil 2<a class="headerlink" href="#kuartil-2" title="Permalink to this headline">#</a></h3>
+<section id="id2">
+<h4>Median<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Me</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Median = </span><span class="si">{</span><span class="n">Me</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Median = 0.0
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="kuartil-3">
-<h3>Kuartil 3<a class="headerlink" href="#kuartil-3" title="Permalink to this headline">#</a></h3>
+<section id="id3">
+<h4>Modus<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Mo</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Modus = </span><span class="si">{</span><span class="n">Mo</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statistics</span> <span class="k">as</span> <span class="nn">st</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Modus = 0
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="median">
-<h3>Median<a class="headerlink" href="#median" title="Permalink to this headline">#</a></h3>
+<section id="id4">
+<h4>Kuartil<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Kuartil ke-1</span>
+<span class="n">q1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;kuartil ke-1 = &#39;</span><span class="p">,</span> <span class="n">q1</span><span class="p">)</span>
+<span class="c1"># Kuartil ke-2</span>
+<span class="n">q2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;kuartil ke-2 = &#39;</span><span class="p">,</span> <span class="n">q2</span><span class="p">)</span>
+<span class="c1"># Kuartil ke-3</span>
+<span class="n">q3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="mi">75</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;kuartil ke-3 = &#39;</span><span class="p">,</span> <span class="n">q3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>kuartil ke-1 =  0.0
+kuartil ke-2 =  0.0
+kuartil ke-3 =  2.0
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="modus">
-<h3>Modus<a class="headerlink" href="#modus" title="Permalink to this headline">#</a></h3>
+<section id="id5">
+<h4>Desil<a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">mode</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">D</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Desil ke-</span><span class="si">{</span><span class="n">ind</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Desil ke-1 = 0.0
+Desil ke-2 = 0.0
+Desil ke-3 = 0.0
+Desil ke-4 = 0.0
+Desil ke-5 = 0.0
+Desil ke-6 = 0.0
+Desil ke-7 = 0.0
+Desil ke-8 = 1.0
+Desil ke-9 = 2.0
+Desil ke-10 = 8.0
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="rata-rata">
-<h3>Rata-rata<a class="headerlink" href="#rata-rata" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">st</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.132309941520468
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="desil-1-10">
-<h3>Desil 1 - 10<a class="headerlink" href="#desil-1-10" title="Permalink to this headline">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0., 0., 0., 0., 0., 0., 0., 1., 2., 8.])
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="jangkauan">
-<h3>Jangkauan<a class="headerlink" href="#jangkauan" title="Permalink to this headline">#</a></h3>
+<section id="id6">
+<h4>Jangkauan<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># rumus jamgkauan J = Xn - X1</span>
 <span class="n">Xn</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">X1</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">J</span> <span class="o">=</span> <span class="n">Xn</span> <span class="o">-</span> <span class="n">X1</span>
-<span class="n">J</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Jangkauan data = </span><span class="si">{</span><span class="n">J</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>710
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jangkauan data = 710
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h4>Simpangan Baku<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">pstdev</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Simpangan baku = </span><span class="si">{</span><span class="n">s</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Simpangan baku = 37.523258400356966
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="kemiringan-skewned">
-<h2>Kemiringan/Skewned<a class="headerlink" href="#kemiringan-skewned" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
+<section id="kemiringan-skewness">
+<h3>Kemiringan/Skewness<a class="headerlink" href="#kemiringan-skewness" title="Permalink to this headline">#</a></h3>
+<p align="justify">
+Dalam teori probabilitas dan statistik, skewness adalah ukuran dari asimetri distribusi probabilitas dari variabel acak bernilai riil tentang nilai tengahnya. Nilai skewness bisa positif, nol, negatif, atau tidak terdefinisi.
+</p><div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># kimiringan</span>
+<span class="n">df</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -729,7 +1168,8 @@ Name: total, dtype: float64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import matplotib dan seaborn</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 </pre></div>
 </div>
@@ -744,16 +1184,13 @@ Name: total, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.7/dist-packages/seaborn/distributions.py:2619: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
-  warnings.warn(msg, FutureWarning)
-</pre></div>
-</div>
-<img alt="_images/tugas1_27_1.png" src="_images/tugas1_27_1.png" />
+<img alt="_images/tugas1_28_0.png" src="_images/tugas1_28_0.png" />
 </div>
 </div>
 <section id="jawaban">
-<h3>Jawaban<a class="headerlink" href="#jawaban" title="Permalink to this headline">#</a></h3>
+<h4>Jawaban<a class="headerlink" href="#jawaban" title="Permalink to this headline">#</a></h4>
 <p>Dilihat dari gambar dan data hasil statistiknya menunjukkan bahwa data tersebut termasuk positively skewed</p>
+</section>
 </section>
 </section>
 </section>
@@ -785,12 +1222,19 @@ Name: total, dtype: float64
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="skewed.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Membuat skewed data</p>
+            <p class="prev-next-title">Data Mining</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="tugas2.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Deskritisasi</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
