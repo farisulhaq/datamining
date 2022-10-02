@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Implementasi KNN" href="knn.html" />
+    <link rel="next" title="Implementasi K-NN Data Iris" href="knn.html" />
     <link rel="prev" title="Statistika Deskriptif" href="statistika.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -133,7 +133,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="knn.html">
-   Implementasi KNN
+   Implementasi K-NN Data Iris
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="kmeans.html">
+   Implementasi K-Means Data Iris
   </a>
  </li>
 </ul>
@@ -665,7 +670,7 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-06558620-30c8-42d9-9b9e-8bb16441009b">
+  <div id="df-dd397f7f-50cc-4f14-a493-e30378ad6a63">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -785,7 +790,7 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
 </table>
 <p>150 rows × 5 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-06558620-30c8-42d9-9b9e-8bb16441009b')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-dd397f7f-50cc-4f14-a493-e30378ad6a63')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -836,12 +841,12 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
 
       <script>
         const buttonEl =
-          document.querySelector('#df-06558620-30c8-42d9-9b9e-8bb16441009b button.colab-df-convert');
+          document.querySelector('#df-dd397f7f-50cc-4f14-a493-e30378ad6a63 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-06558620-30c8-42d9-9b9e-8bb16441009b');
+          const element = document.querySelector('#df-dd397f7f-50cc-4f14-a493-e30378ad6a63');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -891,7 +896,7 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-ec30e356-85cc-400f-8675-6d2eb866beea">
+  <div id="df-17355ba9-f623-48e4-bf4f-1a5a549df9a1">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1059,7 +1064,7 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
 </table>
 <p>150 rows × 9 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-ec30e356-85cc-400f-8675-6d2eb866beea')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-17355ba9-f623-48e4-bf4f-1a5a549df9a1')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1110,12 +1115,12 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
 
       <script>
         const buttonEl =
-          document.querySelector('#df-ec30e356-85cc-400f-8675-6d2eb866beea button.colab-df-convert');
+          document.querySelector('#df-17355ba9-f623-48e4-bf4f-1a5a549df9a1 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-ec30e356-85cc-400f-8675-6d2eb866beea');
+          const element = document.querySelector('#df-17355ba9-f623-48e4-bf4f-1a5a549df9a1');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1158,7 +1163,7 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-77759987-ebad-46d5-befd-59d53b0a8ea2">
+  <div id="df-78f50dce-2f30-4539-92e6-5da5af88d8cb">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1266,7 +1271,7 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
 </table>
 <p>150 rows × 4 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-77759987-ebad-46d5-befd-59d53b0a8ea2')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-78f50dce-2f30-4539-92e6-5da5af88d8cb')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1317,12 +1322,12 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
 
       <script>
         const buttonEl =
-          document.querySelector('#df-77759987-ebad-46d5-befd-59d53b0a8ea2 button.colab-df-convert');
+          document.querySelector('#df-78f50dce-2f30-4539-92e6-5da5af88d8cb button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-77759987-ebad-46d5-befd-59d53b0a8ea2');
+          const element = document.querySelector('#df-78f50dce-2f30-4539-92e6-5da5af88d8cb');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1352,7 +1357,7 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-38bb5794-2fae-4729-bb03-27d5e87c2c31">
+  <div id="df-46e51d34-c935-4081-a878-29c2496518bb">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1520,7 +1525,7 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
 </table>
 <p>150 rows × 9 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-38bb5794-2fae-4729-bb03-27d5e87c2c31')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-46e51d34-c935-4081-a878-29c2496518bb')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1571,12 +1576,12 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
 
       <script>
         const buttonEl =
-          document.querySelector('#df-38bb5794-2fae-4729-bb03-27d5e87c2c31 button.colab-df-convert');
+          document.querySelector('#df-46e51d34-c935-4081-a878-29c2496518bb button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-38bb5794-2fae-4729-bb03-27d5e87c2c31');
+          const element = document.querySelector('#df-46e51d34-c935-4081-a878-29c2496518bb');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1616,7 +1621,7 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-69eb8bd7-eddb-4a2a-ba63-fee5250dc205">
+  <div id="df-a19d975a-95a7-4a00-b164-dcd4a7cb5877">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1700,7 +1705,7 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
 </table>
 <p>150 rows × 2 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-69eb8bd7-eddb-4a2a-ba63-fee5250dc205')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a19d975a-95a7-4a00-b164-dcd4a7cb5877')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1751,12 +1756,12 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
 
       <script>
         const buttonEl =
-          document.querySelector('#df-69eb8bd7-eddb-4a2a-ba63-fee5250dc205 button.colab-df-convert');
+          document.querySelector('#df-a19d975a-95a7-4a00-b164-dcd4a7cb5877 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-69eb8bd7-eddb-4a2a-ba63-fee5250dc205');
+          const element = document.querySelector('#df-a19d975a-95a7-4a00-b164-dcd4a7cb5877');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1942,7 +1947,7 @@ Sipakan dataset yang akan digunakan, setelah menemukan dataset yang berupa numer
     <a class='right-next' id="next-link" href="knn.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Implementasi KNN</p>
+        <p class="prev-next-title">Implementasi K-NN Data Iris</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
