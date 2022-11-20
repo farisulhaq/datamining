@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Implementasi K-Means Data Iris &#8212; DATAMINING</title>
+    <title>Kmeans Clustering &#8212; DATAMINING</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,10 +50,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Naive Bayes Classifier" href="naive-bayes.html" />
-    <link rel="prev" title="Implementasi K-NN Data Iris" href="knn.html" />
+    <link rel="prev" title="K-Nearest Neighbor" href="knn.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -131,12 +133,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="knn.html">
-   Implementasi K-NN Data Iris
+   K-Nearest Neighbor
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Implementasi K-Means Data Iris
+   Kmeans Clustering
   </a>
  </li>
  <li class="toctree-l1">
@@ -157,6 +159,16 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="diabetic.html">
    Diabetic
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="jst.html">
+   Implementasi Backpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="LinearRegresion.html">
+   Implementasi Linear Regresion
   </a>
  </li>
 </ul>
@@ -366,6 +378,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apa-itu-kmeans">
+   Apa itu Kmeans?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menghitung-jarak-dengan-euclidean-distance">
+     Menghitung jarak dengan Euclidean Distance
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#excel">
    Excel
   </a>
@@ -403,7 +427,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Implementasi K-Means Data Iris</h1>
+                <h1>Kmeans Clustering</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -413,6 +437,18 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apa-itu-kmeans">
+   Apa itu Kmeans?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menghitung-jarak-dengan-euclidean-distance">
+     Menghitung jarak dengan Euclidean Distance
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#excel">
    Excel
@@ -452,8 +488,28 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="implementasi-k-means-data-iris">
-<h1>Implementasi K-Means Data Iris<a class="headerlink" href="#implementasi-k-means-data-iris" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="kmeans-clustering">
+<h1>Kmeans Clustering<a class="headerlink" href="#kmeans-clustering" title="Permalink to this headline">#</a></h1>
+<section id="apa-itu-kmeans">
+<h2>Apa itu Kmeans?<a class="headerlink" href="#apa-itu-kmeans" title="Permalink to this headline">#</a></h2>
+<p>Kmeans adalah salah satu metode clustering yang bertujuan untuk mengelompokan suatu kumpulan data menjadi beberapa kelompok. Idenya adalah dengan mengelompokkan data yang memiliki kemiripan berada dalam 1 kelompok dan memisahkan data yang berbeda kedalam kelompok yang berbeda.</p>
+<p>K means clustering merupakan metode algoritma dasar,yang diterapkan sebagai berikut</p>
+<ol class="simple">
+<li><p>Menentukan jumlah cluster</p></li>
+<li><p>Secara acak mendistribusikan data cluster</p></li>
+<li><p>Menghitung rata rata dari data yang ada di cluster.</p></li>
+<li><p>Menggunakan langkah baris 3 kembali sesuai nilai treshold</p></li>
+<li><p>Menghitung jarak antara data dan nilai centroid(K means clustering)</p></li>
+<li><p>Distance space dapat diimplementasikan untuk menghitung jarak data dan centroid.</p></li>
+</ol>
+<section id="menghitung-jarak-dengan-euclidean-distance">
+<h3>Menghitung jarak dengan Euclidean Distance<a class="headerlink" href="#menghitung-jarak-dengan-euclidean-distance" title="Permalink to this headline">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+\displaystyle d(x,y) = \sqrt{\sum_{i=1}^{n}(x-y)^{2}}
+\]</div>
+</section>
+</section>
 <section id="excel">
 <h2>Excel<a class="headerlink" href="#excel" title="Permalink to this headline">#</a></h2>
 <p><strong><a class="reference external" href="https://docs.google.com/spreadsheets/d/1YXvcjEvCJBoag4LdR2ain6GhRINgTLxcTgbJwPCXSlg/edit?usp=sharing">Hitungan Manual K-Means Excel</a></strong></p>
@@ -496,7 +552,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-73245f3e-80e4-47b1-bf9e-59f4f4e26db3">
+  <div id="df-4b00e31e-1720-4888-84e5-9d7a3f6541ae">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -567,7 +623,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-73245f3e-80e4-47b1-bf9e-59f4f4e26db3')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-4b00e31e-1720-4888-84e5-9d7a3f6541ae')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -618,12 +674,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-73245f3e-80e4-47b1-bf9e-59f4f4e26db3 button.colab-df-convert');
+          document.querySelector('#df-4b00e31e-1720-4888-84e5-9d7a3f6541ae button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-73245f3e-80e4-47b1-bf9e-59f4f4e26db3');
+          const element = document.querySelector('#df-4b00e31e-1720-4888-84e5-9d7a3f6541ae');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -660,7 +716,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-b5b77fad-0ecf-4c09-9f24-40b43a33e802">
+  <div id="df-fd7aabb2-aa42-4cfa-b0b8-d975944d4f87">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -731,7 +787,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-b5b77fad-0ecf-4c09-9f24-40b43a33e802')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-fd7aabb2-aa42-4cfa-b0b8-d975944d4f87')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -782,12 +838,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-b5b77fad-0ecf-4c09-9f24-40b43a33e802 button.colab-df-convert');
+          document.querySelector('#df-fd7aabb2-aa42-4cfa-b0b8-d975944d4f87 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-b5b77fad-0ecf-4c09-9f24-40b43a33e802');
+          const element = document.querySelector('#df-fd7aabb2-aa42-4cfa-b0b8-d975944d4f87');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -965,7 +1021,7 @@ memory usage: 5.0 KB
 </pre></div>
 </div>
 <div class="output text_html">
-  <div id="df-8dfa4564-f665-4af7-8d21-1120634e7a8a">
+  <div id="df-23137f7a-bdc0-47b7-ab8e-ce8a1e77520e">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1076,7 +1132,7 @@ memory usage: 5.0 KB
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-8dfa4564-f665-4af7-8d21-1120634e7a8a')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-23137f7a-bdc0-47b7-ab8e-ce8a1e77520e')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1127,12 +1183,12 @@ memory usage: 5.0 KB
 
       <script>
         const buttonEl =
-          document.querySelector('#df-8dfa4564-f665-4af7-8d21-1120634e7a8a button.colab-df-convert');
+          document.querySelector('#df-23137f7a-bdc0-47b7-ab8e-ce8a1e77520e button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-8dfa4564-f665-4af7-8d21-1120634e7a8a');
+          const element = document.querySelector('#df-23137f7a-bdc0-47b7-ab8e-ce8a1e77520e');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1165,7 +1221,7 @@ memory usage: 5.0 KB
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-fbd90310-0ae1-4cfc-befa-7375ab9eb25c">
+  <div id="df-3c1075dc-278c-4674-98b0-0b612a56b96c">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1208,7 +1264,7 @@ memory usage: 5.0 KB
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-fbd90310-0ae1-4cfc-befa-7375ab9eb25c')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-3c1075dc-278c-4674-98b0-0b612a56b96c')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1259,12 +1315,12 @@ memory usage: 5.0 KB
 
       <script>
         const buttonEl =
-          document.querySelector('#df-fbd90310-0ae1-4cfc-befa-7375ab9eb25c button.colab-df-convert');
+          document.querySelector('#df-3c1075dc-278c-4674-98b0-0b612a56b96c button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-fbd90310-0ae1-4cfc-befa-7375ab9eb25c');
+          const element = document.querySelector('#df-3c1075dc-278c-4674-98b0-0b612a56b96c');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1304,9 +1360,9 @@ memory usage: 5.0 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/kmeans_24_0.png" src="_images/kmeans_24_0.png" />
-<img alt="_images/kmeans_24_1.png" src="_images/kmeans_24_1.png" />
-<img alt="_images/kmeans_24_2.png" src="_images/kmeans_24_2.png" />
+<img alt="_images/kmeans_27_0.png" src="_images/kmeans_27_0.png" />
+<img alt="_images/kmeans_27_1.png" src="_images/kmeans_27_1.png" />
+<img alt="_images/kmeans_27_2.png" src="_images/kmeans_27_2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1317,7 +1373,7 @@ memory usage: 5.0 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/kmeans_25_0.png" src="_images/kmeans_25_0.png" />
+<img alt="_images/kmeans_28_0.png" src="_images/kmeans_28_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1328,7 +1384,7 @@ memory usage: 5.0 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/kmeans_26_0.png" src="_images/kmeans_26_0.png" />
+<img alt="_images/kmeans_29_0.png" src="_images/kmeans_29_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1340,7 +1396,7 @@ memory usage: 5.0 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/kmeans_27_0.png" src="_images/kmeans_27_0.png" />
+<img alt="_images/kmeans_30_0.png" src="_images/kmeans_30_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1367,7 +1423,7 @@ memory usage: 5.0 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/kmeans_29_0.png" src="_images/kmeans_29_0.png" />
+<img alt="_images/kmeans_32_0.png" src="_images/kmeans_32_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1393,10 +1449,10 @@ memory usage: 5.0 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f70c65cab90&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f9a20aa7e50&gt;
 </pre></div>
 </div>
-<img alt="_images/kmeans_31_1.png" src="_images/kmeans_31_1.png" />
+<img alt="_images/kmeans_34_1.png" src="_images/kmeans_34_1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1414,7 +1470,7 @@ memory usage: 5.0 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/kmeans_32_0.png" src="_images/kmeans_32_0.png" />
+<img alt="_images/kmeans_35_0.png" src="_images/kmeans_35_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1434,13 +1490,13 @@ memory usage: 5.0 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-       0, 0, 0, 0, 0, 0, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2,
-       2, 2, 2, 1, 1, 2, 2, 2, 2, 1, 2, 1, 2, 1, 2, 2, 1, 1, 2, 2, 2, 2,
-       2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 2, 1, 2, 2, 1], dtype=int32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 2, 2, 2, 0, 2, 2, 2,
+       2, 2, 2, 0, 0, 2, 2, 2, 2, 0, 2, 0, 2, 0, 2, 2, 0, 0, 2, 2, 2, 2,
+       2, 0, 2, 2, 2, 2, 0, 2, 2, 2, 0, 2, 2, 2, 0, 2, 2, 0], dtype=int32)
 </pre></div>
 </div>
 </div>
@@ -1456,7 +1512,7 @@ memory usage: 5.0 KB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8933333333333333
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.24
 </pre></div>
 </div>
 </div>
@@ -1512,7 +1568,7 @@ memory usage: 5.0 KB
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Implementasi K-NN Data Iris</p>
+            <p class="prev-next-title">K-Nearest Neighbor</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="naive-bayes.html" title="next page">
