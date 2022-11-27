@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Implementasi Linear Regresion" href="LinearRegresion.html" />
+    <link rel="next" title="Implementasi Bagging" href="bagging.html" />
     <link rel="prev" title="Diabetic" href="diabetic.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -162,6 +162,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Implementasi Backpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bagging.html">
+   Implementasi Bagging
   </a>
  </li>
  <li class="toctree-l1">
@@ -514,7 +519,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-b1259315-9538-4e8a-bda0-4bc964444656">
+  <div id="df-76512346-a438-4e30-8ca7-c2a248f83036">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -622,7 +627,7 @@ title="Print to PDF"
 </table>
 <p>500 rows × 4 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-b1259315-9538-4e8a-bda0-4bc964444656')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-76512346-a438-4e30-8ca7-c2a248f83036')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -673,12 +678,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-b1259315-9538-4e8a-bda0-4bc964444656 button.colab-df-convert');
+          document.querySelector('#df-76512346-a438-4e30-8ca7-c2a248f83036 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-b1259315-9538-4e8a-bda0-4bc964444656');
+          const element = document.querySelector('#df-76512346-a438-4e30-8ca7-c2a248f83036');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -719,7 +724,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-010aa22b-3ead-47d2-ab5e-108e358aca02">
+  <div id="df-c0949f80-89cb-4e3e-bbf2-44cd0058f080">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -839,7 +844,7 @@ title="Print to PDF"
 </table>
 <p>500 rows × 5 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-010aa22b-3ead-47d2-ab5e-108e358aca02')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c0949f80-89cb-4e3e-bbf2-44cd0058f080')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -890,12 +895,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-010aa22b-3ead-47d2-ab5e-108e358aca02 button.colab-df-convert');
+          document.querySelector('#df-c0949f80-89cb-4e3e-bbf2-44cd0058f080 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-010aa22b-3ead-47d2-ab5e-108e358aca02');
+          const element = document.querySelector('#df-c0949f80-89cb-4e3e-bbf2-44cd0058f080');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -939,7 +944,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-16fb4100-adb2-4e5c-8fdd-a2be0aaa4c1f">
+  <div id="df-67c0e84d-eda3-4f35-b1b1-475d239bc012">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1047,7 +1052,7 @@ title="Print to PDF"
 </table>
 <p>500 rows × 4 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-16fb4100-adb2-4e5c-8fdd-a2be0aaa4c1f')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-67c0e84d-eda3-4f35-b1b1-475d239bc012')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1098,12 +1103,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-16fb4100-adb2-4e5c-8fdd-a2be0aaa4c1f button.colab-df-convert');
+          document.querySelector('#df-67c0e84d-eda3-4f35-b1b1-475d239bc012 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-16fb4100-adb2-4e5c-8fdd-a2be0aaa4c1f');
+          const element = document.querySelector('#df-67c0e84d-eda3-4f35-b1b1-475d239bc012');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1217,10 +1222,10 @@ title="Print to PDF"
             <p class="prev-next-title">Diabetic</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="LinearRegresion.html" title="next page">
+    <a class='right-next' id="next-link" href="bagging.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Implementasi Linear Regresion</p>
+        <p class="prev-next-title">Implementasi Bagging</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
